@@ -148,7 +148,7 @@ public class PixelScreenView extends View {
     public void eventDelete() {
         if (cursorPos > 0) currentInput.deleteCharAt(cursorPos - 1);
 
-        cursorPos --;
+        if (cursorPos > 0) cursorPos --;
         clearOutput();
 
         requestLayout();

@@ -43,17 +43,30 @@ public final class Calculator {
     }
 
     private static boolean isSymbol(char c) {
-        return c == '+' || c == '-' || c == '*' || c == '/' || c == '(' || c == ')';
+        return c == '+' || c == '-' || c == '*' || c == '/' || c == '^' || c == '(' || c == ')';
     }
 
     private static boolean isBracket(char c) {
         return c == '(' || c == ')';
     }
 
+    private static int getPriority(char c) {
+        if (c == '^') return 10;
+        if (c == '*' || c == '/') return 9;
+        if (c == '+' || c == '-') return 8;
+        return 0;
+    }
+
+    private static boolean laterThanTop(char top, char peek) {
+        return getPriority(peek) <= getPriority(top);
+    }
+
     private static boolean getTokens(String expr) {
+        tokens.clear();
         expr += '$';
 
         double currentNum = 0, currentFac = 1, currentSign = 1, eps = 1e-12;
+
         for (int i = 0; i < expr.length(); i ++) {
             char peek = expr.charAt(i);
             if (peek == ' ') continue;
@@ -93,12 +106,16 @@ public final class Calculator {
         */
     }
 
-    public static String evalResult(String expr) {
-        if (!getTokens(expr)) return "Error!";
+    private static Stack<Character> symbolStack = new Stack<>();
+    private static Stack<Double> outputNumberStack = new Stack<>();
+    private static ArrayList<Character> outputSymbolQueue = new ArrayList<>();
 
-        Stack<Character> symbolStack = new Stack<>();
-        Stack<Double> outputNumberStack = new Stack<>();
-        ArrayList<Character> outputSymbolQueue = new ArrayList<>();
+    public static String evalResult(String expr) {
+        if (!getTokens(expr)) return "Token Error!";
+
+        symbolStack.clear();
+        outputNumberStack.clear();
+        outputSymbolQueue.clear();
 
         tokens.add(new Token()); // 尾标记
         for (Token token : tokens) {
@@ -106,12 +123,14 @@ public final class Calculator {
                 outputNumberStack.push(token.val_num);
             }
             if (token.type == TokenType.Symbol) {
-                while (!symbolStack.isEmpty() && !isBracket(token.val_char) && !isBracket(symbolStack.peek()) && (token.val_char == '+' || token.val_char == '-' || symbolStack.peek() == '*' || symbolStack.peek() == '/')) { // 非空且优先级小于栈顶，加入后缀表达式
+                while (!symbolStack.isEmpty() && !isBracket(symbolStack.peek()) && !isBracket(token.val_char) && laterThanTop(symbolStack.peek(), token.val_char)) { // 非空且优先级小于栈顶，加入后缀表达式
                     outputSymbolQueue.add(symbolStack.pop());
                 }
                 if (token.val_char == ')') {
+                    if (symbolStack.isEmpty()) return "Bracket Error!";
                     for (char sym = symbolStack.pop(); sym != '('; sym = symbolStack.pop()) { // 右括号出现，到左括号内所有符号加入后缀表达式
                         outputSymbolQueue.add(sym);
+                        if (symbolStack.isEmpty()) return "Bracket Error!";
                     }
                 } else {
                     symbolStack.add(token.val_char); // 除去右括号的符号加入符号栈
@@ -123,6 +142,7 @@ public final class Calculator {
 
             // 计算局部表达式
             for (char sym : outputSymbolQueue) {
+                if (outputNumberStack.size() < 2) return "Symbol Error!";
                 double b = outputNumberStack.pop();
                 double a = outputNumberStack.pop();
                 double c = 0;
@@ -131,12 +151,14 @@ public final class Calculator {
                     case '-': c = a - b; break;
                     case '*': c = a * b; break;
                     case '/': c = a / b; break;
+                    case '^': c = Math.pow(a, b); break;
                 }
                 outputNumberStack.push(c);
             }
             outputSymbolQueue.clear();
         }
 
+        if (outputNumberStack.size() > 1) return "Error!";
         return ansToString(outputNumberStack.peek(), 8, true);
     }
 
