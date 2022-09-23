@@ -49,8 +49,10 @@
             android:elevation="36dp"
             app:layout_constraintBottom_toTopOf="@id/screen"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/screen"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -62,7 +64,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="8dp"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout_ext"
+        app:layout_constraintBottom_toTopOf="@+id/gridLayout_ext"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
@@ -251,12 +253,12 @@
             android:orientation="vertical">
 
             <Button
-                android:id="@+id/button_arrowabout"
+                android:id="@+id/button_arrowexample"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:backgroundTint="@color/teal_800"
-                android:text="ABOUT"
+                android:text="EXAMP"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
                 android:textSize="8sp" />
@@ -276,214 +278,167 @@
 
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/linearLayout_ext"
+    <androidx.gridlayout.widget.GridLayout
+        android:id="@+id/gridLayout_ext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="8dp"
-        android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout_numpad"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout_arrowpad"
+        app:orientation="vertical"
+        app:columnCount="6"
+        app:rowCount="2">
 
-        <LinearLayout
+        <Button
+            android:id="@+id/button_extpwr2"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="50sp"
             android:layout_weight="1"
-            android:orientation="vertical">
+            android:backgroundTint="@color/white"
+            android:text="x²"
+            android:textAllCaps="false"
+            android:textColor="#454545"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1" />
 
-            <Button
-                android:id="@+id/button_extpwr2"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:backgroundTint="@color/white"
-                android:text="x²"
-                android:textAllCaps="false"
-                android:textColor="#454545" />
-
-            <Button
-                android:id="@+id/button_extsqrt2"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:backgroundTint="@color/white"
-                android:text="√x̅"
-                android:textAllCaps="false"
-                android:textColor="#454545" />
-            <!-- "√▔" -->
-
-        </LinearLayout>
-
-        <Space
+        <Button
+            android:id="@+id/button_extsqrt2"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="0.08" />
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="50sp"
             android:layout_weight="1"
-            android:orientation="vertical">
+            android:backgroundTint="@color/white"
+            android:text="√x̅"
+            android:textAllCaps="false"
+            android:textColor="#454545"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1" />
 
-            <Button
-                android:id="@+id/button_extpwr"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:backgroundTint="@color/white"
-                android:text="xⁿ"
-                android:textAllCaps="false"
-                android:textColor="#454545" />
-
-            <Button
-                android:id="@+id/button_extsqrtn"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:backgroundTint="@color/white"
-                android:text="ⁿ√x̅"
-                android:textAllCaps="false"
-                android:textColor="#454545" />
-
-        </LinearLayout>
-
-        <Space
+        <Button
+            android:id="@+id/button_extpwr"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="0.08" />
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="50sp"
             android:layout_weight="1"
-            android:orientation="vertical">
+            android:backgroundTint="@color/white"
+            android:text="xⁿ"
+            android:textAllCaps="false"
+            android:textColor="#454545"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1" />
 
-            <Button
-                android:id="@+id/button_extln"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:backgroundTint="@color/white"
-                android:text="ln"
-                android:textAllCaps="false"
-                android:textColor="#454545" />
-
-            <Button
-                android:id="@+id/button_extleftbracket"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:backgroundTint="@color/white"
-                android:text="("
-                android:textAllCaps="false"
-                android:textColor="#454545" />
-
-        </LinearLayout>
-
-        <Space
+        <Button
+            android:id="@+id/button_extsqrtn"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="0.08" />
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="50sp"
             android:layout_weight="1"
-            android:orientation="vertical">
+            android:backgroundTint="@color/white"
+            android:text="ⁿ√x̅"
+            android:textAllCaps="false"
+            android:textColor="#454545"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1" />
 
-            <Button
-                android:id="@+id/button_extsin"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:backgroundTint="@color/white"
-                android:text="sin"
-                android:textAllCaps="false"
-                android:textColor="#454545" />
-
-            <Button
-                android:id="@+id/button_extrightbracket"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:backgroundTint="@color/white"
-                android:text=")"
-                android:textAllCaps="false"
-                android:textColor="#454545" />
-
-        </LinearLayout>
-
-        <Space
+        <Button
+            android:id="@+id/button_extln"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="0.08" />
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="50sp"
             android:layout_weight="1"
-            android:orientation="vertical">
+            android:backgroundTint="@color/white"
+            android:text="ln"
+            android:textAllCaps="false"
+            android:textColor="#454545"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1" />
 
-            <Button
-                android:id="@+id/button_extcos"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:backgroundTint="@color/white"
-                android:text="cos"
-                android:textAllCaps="false"
-                android:textColor="#454545" />
-
-            <Button
-                android:id="@+id/button_extans"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:backgroundTint="@color/white"
-                android:text="Ans"
-                android:textAllCaps="false"
-                android:textColor="#454545" />
-
-        </LinearLayout>
-
-        <Space
+        <Button
+            android:id="@+id/button_extleftbracket"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="0.08" />
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="50sp"
             android:layout_weight="1"
-            android:orientation="vertical">
+            android:backgroundTint="@color/white"
+            android:text="("
+            android:textAllCaps="false"
+            android:textColor="#454545"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1" />
 
-            <Button
-                android:id="@+id/button_exttan"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:backgroundTint="@color/white"
-                android:text="tan"
-                android:textAllCaps="false"
-                android:textColor="#454545" />
+        <Button
+            android:id="@+id/button_extsin"
+            android:layout_width="0dp"
+            android:layout_height="50sp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/white"
+            android:text="sin"
+            android:textAllCaps="false"
+            android:textColor="#454545"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1" />
 
-            <Button
-                android:id="@+id/button_extfunc"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:backgroundTint="@color/white"
-                android:text="FUNC"
-                android:textAllCaps="false"
-                android:textColor="#454545"
-                android:textSize="10sp" />
+        <Button
+            android:id="@+id/button_extrightbracket"
+            android:layout_width="0dp"
+            android:layout_height="50sp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/white"
+            android:text=")"
+            android:textAllCaps="false"
+            android:textColor="#454545"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1" />
 
-        </LinearLayout>
+        <Button
+            android:id="@+id/button_extcos"
+            android:layout_width="0dp"
+            android:layout_height="50sp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/white"
+            android:text="cos"
+            android:textAllCaps="false"
+            android:textColor="#454545"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1" />
 
-    </LinearLayout>
+        <Button
+            android:id="@+id/button_extans"
+            android:layout_width="0dp"
+            android:layout_height="50sp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/white"
+            android:text="Ans"
+            android:textAllCaps="false"
+            android:textColor="#454545"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1" />
+
+        <Button
+            android:id="@+id/button_exttan"
+            android:layout_width="0dp"
+            android:layout_height="50sp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/white"
+            android:text="tan"
+            android:textAllCaps="false"
+            android:textColor="#454545"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1" />
+
+        <Button
+            android:id="@+id/button_extfunc"
+            android:layout_width="0dp"
+            android:layout_height="50sp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/white"
+            android:text="FUNC"
+            android:textAllCaps="false"
+            android:textColor="#454545"
+            android:textSize="10sp"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1" />
+
+    </androidx.gridlayout.widget.GridLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout_numpad"
@@ -531,12 +486,12 @@
                 android:textColor="#FFFFFF" />
 
             <Button
-                android:id="@+id/button_numdot"
+                android:id="@+id/button_numcomma"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:backgroundTint="@color/grey_700"
-                android:text="."
+                android:text=","
                 android:textColor="#FFFFFF" />
         </LinearLayout>
 
@@ -627,13 +582,14 @@
                 android:textColor="#FFFFFF" />
 
             <Button
-                android:id="@+id/button_numcomma"
+                android:id="@+id/button_numdot"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:backgroundTint="@color/grey_700"
-                android:text=","
+                android:text="."
                 android:textColor="#FFFFFF" />
+
         </LinearLayout>
 
         <Space

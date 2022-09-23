@@ -83,7 +83,7 @@ public class CalculatorFragment extends Fragment {
         buttonEvents.put(R.id.button_extcos, "cos(");
         buttonEvents.put(R.id.button_exttan, "tan(");
         buttonEvents.put(R.id.button_extsqrt2, "sqrt(");
-        buttonEvents.put(R.id.button_extsqrtn, "sqrt(n,");
+        buttonEvents.put(R.id.button_extsqrtn, "sqrt_n(");
         buttonEvents.put(R.id.button_extleftbracket, "(");
         buttonEvents.put(R.id.button_extrightbracket, ")");
         buttonEvents.put(R.id.button_extans, "Ans");
@@ -100,7 +100,7 @@ public class CalculatorFragment extends Fragment {
         buttonEvents.put(R.id.button_arrowalpha, "$alpha");
         buttonEvents.put(R.id.button_arrowvars, "$variables");
         buttonEvents.put(R.id.button_arrowmenu, "$menu");
-        buttonEvents.put(R.id.button_arrowabout, "$about");
+        buttonEvents.put(R.id.button_arrowexample, "9+ln(7.4+sin(cos(5)+tan(7*(8+6.56))))");
         buttonEvents.put(R.id.button_arrowsetup, "$setup");
         buttonEvents.put(R.id.button_arrowclear, "$clear");
 
