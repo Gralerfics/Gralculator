@@ -6,10 +6,10 @@
         android:icon="@drawable/ic_baseline_functions_24dp"
         android:title="@string/title_calculator" />
 
-    <item
-        android:id="@+id/navigation_graphing"
-        android:icon="@drawable/ic_baseline_all_inclusive_24dp"
-        android:title="@string/title_graphing" />
+<!--    <item-->
+<!--        android:id="@+id/navigation_graphing"-->
+<!--        android:icon="@drawable/ic_baseline_all_inclusive_24dp"-->
+<!--        android:title="@string/title_graphing" />-->
 
     <item
         android:id="@+id/navigation_settings"

@@ -80,10 +80,10 @@ public class MainActivity extends AppCompatActivity {
                     case 0:
                         fragment = new CalculatorFragment();
                         break;
-                    case 1:
-                        fragment = new GraphingFragment();
-                        break;
-                    case 2:
+//                    case 1:
+//                        fragment = new GraphingFragment();
+//                        break;
+                    case 1: // case 2:
                         fragment = new SettingsFragment();
                         break;
                 }
@@ -94,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public int getCount() {
-                return 3;
+                return 2; // 3;
             }
         });
 
@@ -123,11 +123,11 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.navigation_calculator:
                         viewPager.setCurrentItem(0);
                         break;
-                    case R.id.navigation_graphing:
-                        viewPager.setCurrentItem(1);
-                        break;
+//                    case R.id.navigation_graphing:
+//                        viewPager.setCurrentItem(1);
+//                        break;
                     case R.id.navigation_settings:
-                        viewPager.setCurrentItem(2);
+                        viewPager.setCurrentItem(1); // viewPager.setCurrentItem(2);
                         break;
                 }
                 return false;

@@ -125,13 +125,6 @@ public final class Calculator {
             if (strb.charAt(strb.length() - 1) == '.') strb.deleteCharAt(strb.length() - 1);
         }
         return strb.toString();
-
-        /* 原方式
-            String[] strs = (BigDecimal.valueOf(value).toString() + ".0").split("\\.");
-            StringBuilder str_r = new StringBuilder(strs[1].substring(0, Math.min(strs[1].length(), precision)));
-            for (int i = str_r.length() - 1; i >= 0 && str_r.charAt(i) == '0'; i --) str_r.deleteCharAt(i);
-            return strs[0] + (str_r.length() > 0 ? "." + str_r.toString() : "");
-        */
     }
 
     private static String evalFunc(String funcName, double val) {
@@ -189,6 +182,7 @@ public final class Calculator {
                 } else {
                     if (token.type == TokenType.Symbol && token.val_char == '(') cntLeftBracket ++;
                     if (token.type == TokenType.Symbol && token.val_char == ')' && cntLeftBracket > 0) cntLeftBracket --;
+                    if (token.val_char != ')' && token == _tokens.get(_tokens.size() - 1)) return "$Bracket Error!";
                     subTokens.add(token);
                     continue;
                 }
