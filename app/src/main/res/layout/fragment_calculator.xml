@@ -426,15 +426,15 @@
             app:layout_rowWeight="1" />
 
         <Button
-            android:id="@+id/button_extfunc"
+            android:id="@+id/button_extsto"
             android:layout_width="0dp"
             android:layout_height="50sp"
             android:layout_weight="1"
             android:backgroundTint="@color/white"
-            android:text="FUNC"
+            android:text="STO"
             android:textAllCaps="false"
             android:textColor="#454545"
-            android:textSize="10sp"
+            android:textSize="14sp"
             app:layout_columnWeight="1"
             app:layout_rowWeight="1" />
 

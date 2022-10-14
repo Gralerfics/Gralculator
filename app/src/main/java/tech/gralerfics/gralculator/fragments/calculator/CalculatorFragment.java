@@ -11,11 +11,11 @@ import androidx.fragment.app.Fragment;
 
 import java.util.HashMap;
 
+import tech.gralerfics.gralculator.MainActivity;
 import tech.gralerfics.gralculator.R;
 import tech.gralerfics.gralculator.databinding.FragmentCalculatorBinding;
 
 public class CalculatorFragment extends Fragment {
-
     private FragmentCalculatorBinding binding;
 
     private HashMap<Integer, String> buttonEvents;
@@ -39,6 +39,22 @@ public class CalculatorFragment extends Fragment {
                         btn.setOnClickListener(_view -> pixelScreenView.eventLeft());
                     } else if (event.contains("right")) {
                         btn.setOnClickListener(_view -> pixelScreenView.eventRight());
+                    } else if (event.contains("up")) {
+                        btn.setOnClickListener(_view -> pixelScreenView.eventUp());
+                    } else if (event.contains("down")) {
+                        btn.setOnClickListener(_view -> pixelScreenView.eventDown());
+                    } else if (event.contains("setup")) {
+                        btn.setOnClickListener(_view -> {
+                            
+                        });
+                    } else if (event.contains("alpha")) {
+                        btn.setOnClickListener(_view -> {
+
+                        });
+                    } else if (event.contains("shift")) {
+                        btn.setOnClickListener(_view -> {
+
+                        });
                     }
                 } else {
                     // Raw string
@@ -83,11 +99,11 @@ public class CalculatorFragment extends Fragment {
         buttonEvents.put(R.id.button_extcos, "cos(");
         buttonEvents.put(R.id.button_exttan, "tan(");
         buttonEvents.put(R.id.button_extsqrt2, "sqrt(");
-        buttonEvents.put(R.id.button_extsqrtn, "sqrt_n(");
+        buttonEvents.put(R.id.button_extsqrtn, "^(1/)");
         buttonEvents.put(R.id.button_extleftbracket, "(");
         buttonEvents.put(R.id.button_extrightbracket, ")");
         buttonEvents.put(R.id.button_extans, "Ans");
-        buttonEvents.put(R.id.button_extfunc, "$func");
+        buttonEvents.put(R.id.button_extsto, "->");
 
         // Arrowpad Binding
         buttonEvents.put(R.id.button_arrowup, "$up");
@@ -115,5 +131,4 @@ public class CalculatorFragment extends Fragment {
         super.onDestroyView();
         binding = null;
     }
-
 }

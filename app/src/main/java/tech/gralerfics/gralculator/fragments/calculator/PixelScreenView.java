@@ -124,10 +124,11 @@ public class PixelScreenView extends View {
     }
 
     public void eventInput(String str) {
-        currentInput.insert(cursorPos, str);
-
-        cursorPos += str.length();
-        clearOutput();
+        if (currentInput.length() + str.length() <= columnNum * (rowNum - 1) - 1) {
+            currentInput.insert(cursorPos, str);
+            cursorPos += str.length();
+            clearOutput();
+        }
 
         requestLayout();
     }
@@ -140,6 +141,18 @@ public class PixelScreenView extends View {
 
     public void eventRight() {
         if (cursorPos < currentInput.length()) cursorPos ++;
+
+        requestLayout();
+    }
+
+    public void eventUp() {
+        if (cursorPos >= columnNum) cursorPos -= columnNum;
+
+        requestLayout();
+    }
+
+    public void eventDown() {
+        if (cursorPos + columnNum <= currentInput.length()) cursorPos += columnNum;
 
         requestLayout();
     }
@@ -164,7 +177,12 @@ public class PixelScreenView extends View {
 
     public void eventExecute() {
         clearOutput();
-        currentOutput.append(Calculator.evalResult(currentInput.toString()));
+        try {
+            String res = Calculator.evalResult(currentInput.toString());
+            currentOutput.append(res);
+        } catch (Exception e) {
+            currentOutput.append(e.getMessage());
+        }
 
         requestLayout();
     }

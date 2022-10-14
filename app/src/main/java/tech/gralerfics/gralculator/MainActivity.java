@@ -23,7 +23,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import tech.gralerfics.gralculator.databinding.ActivityMainBinding;
 import tech.gralerfics.gralculator.fragments.calculator.CalculatorFragment;
-import tech.gralerfics.gralculator.fragments.graphing.GraphingFragment;
+// import tech.gralerfics.gralculator.fragments.graphing.GraphingFragment;
 import tech.gralerfics.gralculator.fragments.settings.SettingsFragment;
 
 public class MainActivity extends AppCompatActivity {
@@ -66,6 +66,10 @@ public class MainActivity extends AppCompatActivity {
     // 以下是为了去掉 ActionBar 而用于替代 Navigation 导航的 Viewpager
     private ViewPager viewPager;
     private BottomNavigationView bottomNavigationView;
+
+    public ViewPager getViewPager() {
+        return viewPager;
+    }
 
     private void initViewPager() {
         viewPager = findViewById(R.id.view_pager);
@@ -134,5 +138,4 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
 }

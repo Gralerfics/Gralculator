@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/MyFiles/Projects/Android/Gralculator/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/MyFiles/Projects/Android/Gralculator/app/src/main/res/layout/fragment_calculator.xml" value="0.3244186046511628" />
+        <entry key="..\:/MyFiles/Projects/Android/Gralculator/app/src/main/res/layout/fragment_graphing.xml" value="0.17806484295845998" />
+        <entry key="..\:/MyFiles/Projects/Android/Gralculator/app/src/main/res/layout/fragment_settings.xml" value="0.6" />
+        <entry key="..\:/MyFiles/Projects/Android/Gralculator/app/src/main/res/menu/bottom_nav_menu.xml" value="0.3194444444444444" />
+        <entry key="..\:/Workplace/Gralculator/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.411" />
+        <entry key="..\:/Workplace/Gralculator/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.411" />
+        <entry key="..\:/Workplace/Gralculator/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.411" />
+        <entry key="..\:/Workplace/Gralculator/app/src/main/res/drawable/ic_launcher_background.xml" value="0.411" />
+        <entry key="..\:/Workplace/Gralculator/app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.411" />
+        <entry key="..\:/Workplace/Gralculator/app/src/main/res/font/high_pixel_7.xml" value="0.7328125" />
+        <entry key="..\:/Workplace/Gralculator/app/src/main/res/layout-v28/fragment_calculator.xml" value="0.6657608695652174" />
+        <entry key="..\:/Workplace/Gralculator/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Workplace/Gralculator/app/src/main/res/layout/fragment_calculator.xml" value="0.67" />
+        <entry key="..\:/Workplace/Gralculator/app/src/main/res/layout/fragment_graphing.xml" value="0.5471014492753623" />
+        <entry key="..\:/Workplace/Gralculator/app/src/main/res/layout/fragment_notifications.xml" value="0.5471014492753623" />
+        <entry key="..\:/Workplace/Gralculator/app/src/main/res/layout/fragment_settings.xml" value="0.5471014492753623" />
+        <entry key="..\:/Workplace/Gralculator/app/src/main/res/menu/bottom_nav_menu.xml" value="0.5848958333333333" />
+        <entry key="..\:/Workplace/Gralculator/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.631" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
